@@ -14,11 +14,11 @@
 <body>
     <section class="sub-header">
         <nav>
-            <a href="Index.html"><img src="images/logo.png"></a>
+            <a href="Index.php"><img src="images/logo.png"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="Index.php">HOME</a></li>
+                    <li><a href="login.php">SIGN UP</a></li>
                     <li><a href="About Us.php">ABOUT</a></li>
                     <li><a href="Course.php">COURSE</a></li>
                     <li><a href="Blog.php">BLOG</a></li>

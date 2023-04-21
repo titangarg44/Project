@@ -14,11 +14,11 @@
 <body>
     <section class="sub-header">
         <nav>
-            <a href="Index.html"><img src="images/logo.png"></a>
+            <a href="Index.php"><img src="images/logo.png"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="Index.php">HOME</a></li>
+                    <li><a href="login.php">SIGN UP</a></li>
                     <li><a href="About Us.php">ABOUT</a></li>
                     <li><a href="Course.php">COURSE</a></li>
                     <li><a href="Blog.php">BLOG</a></li>
@@ -40,7 +40,7 @@
                 Voluptatum, veniam repudiandae nisi porro eligendi, 
                 minima doloribus perferendis provident incidunt deserunt quasi architecto? 
                 Voluptates expedita exercitationem accusamus, optio soluta aliquid quae?</p>
-                <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+                <a href="https://educationhomie.school.blog" class="hero-btn red-btn">EXPLORE NOW</a>
             </div>
             <div class="about-col">
                 <img src="images/about.jpg">

@@ -1,5 +1,8 @@
 <?php
-require_once("config.php");
+require_once("config_reg.php");
+
+error_reporting(E_ERROR | E_PARSE);
+
 if(isset($_POST['form_submit'])){
 $name=trim($_POST['name']);
 $fname=trim($_POST['fname']);
@@ -13,7 +16,7 @@ $email=trim($_POST['email']);
 $mobile=trim($_POST['mobile']);
 $pay_status='PAID';
 $course_fees='6000';
-$res_no='TS'.rand(99,100).time();
+$reg_no='TS'.rand(99,100).time();
 $folder="uploads/";
 //Photo   
 $image_file=$_FILES['image']['name'];
@@ -29,5 +32,62 @@ $spath=$folder.$simage_file;
 $file_name_array=explode(".",$simage_file);
 $extension=end($file_name_array);
 $snew_image_name='sign_'.rand().'.'.$extension;
+if($file=!'')
+ {
+move_uploaded_file($file, $folder .$new_image_name);
+ }
+if($sfile=!'')
+ {
+move_uploaded_file($sfile, $folder .$snew_image_name);
+$sql="INSERT INTO registrations(name,fname,mname,gender,dob,address,category,course,email,mobile,pay_status,course_fees,reg_no,image,sign)
+VALUES (:name,:fname,:mname,:gender,:dob,:address,:category,:course,:email,:mobile,:pay_status,:course_fees,:reg_no,:image,:sign)";
+
+$stmt=$db->prepare($sql);
+$stmt->bindParam(':name', $name, PDO::PARAM_STR);
+$stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+$stmt->bindParam(':mname', $mname, PDO::PARAM_STR); 
+$stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
+$stmt->bindParam(':dob', $dob, PDO::PARAM_STR);
+$stmt->bindParam(':address', $address, PDO::PARAM_STR);
+$stmt->bindParam(':category', $category, PDO::PARAM_STR);
+$stmt->bindParam(':course', $course, PDO::PARAM_STR);
+$stmt->bindParam(':email', $email, PDO::PARAM_STR);
+$stmt->bindParam(':mobile', $mobile, PDO::PARAM_STR);
+$stmt->bindParam(':pay_status', $pay_status, PDO::PARAM_STR);
+$stmt->bindParam(':course_fees', $course_fees, PDO::PARAM_STR);
+$stmt->bindParam(':reg_no', $reg_no, PDO::PARAM_STR);
+$stmt->bindParam(':image', $new_image_name, PDO::PARAM_STR);
+$stmt->bindParam(':sign', $snew_image_name, PDO::PARAM_STR);
+$stmt->execute();
+$last_id=$db->lastInsertId();
+if($last_id=!''){
+    header("location:pv.php?id=".$reg_no);
+    echo "Your enrollment is completed";
+  }
+else{
+    echo'Something went wrong';
+  }
+ }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <center><a href="Index.php" style="background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;">Home</a></center>
+</body>
+</html>

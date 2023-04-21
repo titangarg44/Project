@@ -14,12 +14,11 @@
 <body>
     <section class="header">
         <nav>
-            <a href="Index.html"><img src="images/logo.png"></a>
+            <a href="Index.php"><img src="images/logo.png"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="login.php">SIGN UP</a></li>
-                    <li><a href="Index.php">HOME</a></li>
                     <li><a href="About Us.php">ABOUT</a></li>
                     <li><a href="Course.php">COURSE</a></li>
                     <li><a href="Blog.php">BLOG</a></li>
@@ -33,7 +32,7 @@
             <p>Making Website is now one of the easiest thing in the world.
                 You just need to learn HTML, CSS,<br>Javascript and you are good to go.
             </p>
-            <a href="admission_form.php" class="hero-btn">Admission Enrollment</a>
+            <a href="admission_form.php" class="hero-btn">Click Here To Enroll</a>
         </div>
     </section>
     <!------ Course ------>
@@ -168,8 +167,8 @@
     <!------ Call To Action ------>
     
     <section class="cta">
-        <h1>Enroll For Our Various Online Courses<br>Anywhere From The World</h1>
-        <a href="" class="hero-btn">CONTACT US</a>
+        <h1>Learn New Things To About Our University<br>Events Anywhere From The World</h1>
+        <a href="Event.php" class="hero-btn">Learn More</a>
     </section>
     
     <!------ Footer ------>

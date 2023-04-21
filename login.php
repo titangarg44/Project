@@ -1,5 +1,5 @@
 <?php
-@include 'config.php';
+@include 'Config.php';
 
 session_start();
 
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
    
 <div class="form-container">
 
-   <form action="" method="post">
+   <form action="Index.php" method="post">
       <h3>login now</h3>
       <?php 
       if(isset($error)){
